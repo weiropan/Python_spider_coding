@@ -5,7 +5,7 @@ Created on Thu Aug 30 21:29:11 2018
 @author: weiro
 """
  
-# 使用 pandas 房天下 租房数据
+# 爬取 房天下 租房数据
 import requests
 from lxml import etree
 import pandas as pd
