@@ -19,6 +19,7 @@ movies_top250_list = []
 for page in range(10):
     url = 'https://movie.douban.com/top250?start={}&filter='.format(25*page)
     resp = requests.get(url,headers=headers,timeout=20)
+    print("第%d页响应状态码为： "%(page),resp.status_code)
     html = resp.text
     xml = etree.HTML(html)
     # 中文名
