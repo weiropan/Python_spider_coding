@@ -39,17 +39,16 @@ class Lagouspider():
             '''获取职位详情页链接'''
             self.get_list_links(html)
             '''进行翻页'''
-            #try:
-            time.sleep(10)
-            next_btn = self.driver.find_element_by_xpath('//*[@id="s_position_list"]/div[2]/div/span[last()]')
+            try:
+                next_btn = self.driver.find_element_by_xpath('//*[@id="s_position_list"]/div[2]/div/span[last()]')
 
-            # 判断是否为最后一页
-            if "pager_next pager_next_disabled" in next_btn.get_attribute('class'):
-                break
-            else:
-                next_btn.click()
-            #except:
-                #print(html)
+                # 判断是否为最后一页
+                if "pager_next pager_next_disabled" in next_btn.get_attribute('class'):
+                    break
+                else:
+                    next_btn.click()
+            except:
+                print(html)
             # 模拟人工翻页
             time.sleep(random.randint(1, 2) + random.random())
 
